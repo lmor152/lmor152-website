@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About Liam" description="About Liam">
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8 lg:gap-20">
+			<header class="hero">
+				<Hero
+					title="About"
+					tagline="Thanks for stopping by. Read below to learn more about me and my background"
+					align="start"
+				/>
+				<img
+						alt="Liam Portrait"
+						width="400"
+						height="auto"
+						src="/assets/tennis.webp"
+				/>
+			</header>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I grew up in Auckland, New Zealand and studied Engineering Science at the University of Auckland. After completing my undergraduate, 
+						I started my role at KPMG as a data consultant, and continued to study part time for my Master's degree in Operations Research and Analytics. 
+						Outside of work I enjoy playing tennis, reading and visiting the beach
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Master of Operations Research and Analytics</p>
+					<p>BE(Hons) in Engineering Science</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Python, optimisation and machine learning, cloud (Azure and AWS) engineering, Power BI</p>
+				</div>
+			</section>
+		</main>
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.hero img {
+		object-fit: contain;
+		object-position: center;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+		width: 100%;
+		max-width: 600px;
+		height: auto;
+	}
+
+	section {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		max-width: 65ch;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+		.hero img {
+			border-radius: 4.5rem;
+			object-fit: contain;
+			width: 100%;
+			height: auto;
+			justify-self: end;
+		}
+
+		section {
+			display: grid;
+			grid-template-columns: 1fr 3fr;
+			gap: 3rem;
+			padding-inline: 2.5rem;
+		}
+
+		.section-title {
+			font-size: var(--text-xl);
+		}
+
+		.content {
+			font-size: var(--text-lg);
+		}
+	}
+</style>

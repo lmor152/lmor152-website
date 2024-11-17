@@ -1,0 +1,80 @@
+---
+// Fetch dashboard data from the backend
+const response = await fetch('http://localhost:8000/api/nacho-reviews/dashboard');
+const dashboardData = await response.json();
+---
+
+<div class="dashboard">
+    {dashboardData.error ? (
+        <p class="error-message">No reviews available yet. Be the first to submit one!</p>
+    ) : (
+        dashboardData.plots.map(plot => (
+            <div class="chart">
+                <h3>{plot.title}</h3>
+                <div id={plot.id} class="plot-container"></div>
+            </div>
+        ))
+    )}
+</div>
+
+<script define:vars={{ dashboardData }}>
+    import Plotly from 'plotly.js-dist';
+    
+    // Create each plot from the server-provided data
+    if (!dashboardData.error) {
+        dashboardData.plots.forEach(plot => {
+            Plotly.newPlot(plot.id, plot.plot.data, plot.plot.layout);
+        });
+    }
+
+    // Make plots responsive
+    window.addEventListener('resize', () => {
+        dashboardData.plots.forEach(plot => {
+            Plotly.relayout(plot.id, {
+                'xaxis.autorange': true,
+                'yaxis.autorange': true
+            });
+        });
+    });
+</script>
+
+<style>
+    .dashboard {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .dashboard {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+    }
+
+    .chart {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .plot-container {
+        width: 100%;
+        height: 400px;
+    }
+
+    .error-message {
+        text-align: center;
+        color: #666;
+        grid-column: 1 / -1;
+        padding: 2rem;
+        background: #f8f8f8;
+        border-radius: 8px;
+    }
+
+    h3 {
+        margin: 0 0 1rem 0;
+        font-size: 1.2rem;
+        color: var(--text-primary);
+    }
+</style> 
