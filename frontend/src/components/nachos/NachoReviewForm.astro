@@ -48,17 +48,28 @@
 </form>
 
 <script>
-    const form = document.getElementById('nacho-review-form');
+    const form = document.querySelector<HTMLFormElement>('#nacho-review-form');
+    if (!form) throw new Error('Review form not found');
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         const formData = new FormData(form);
-        const reviewData = Object.fromEntries(formData.entries());
+        const reviewData: Partial<ReviewData> = {};
         
-        // Convert numeric fields from strings
-        ['cheese_rating', 'crispiness_rating', 'topping_quality', 'overall_rating', 'price'].forEach(field => {
-            reviewData[field] = parseFloat(reviewData[field]);
+        formData.forEach((value, key) => {
+            if (typeof value === 'string') {
+                reviewData[key as keyof ReviewData] = value;
+            }
+        });
+
+        // Convert numeric fields
+        const numericFields = ['cheese_rating', 'crispiness_rating', 'topping_quality', 'overall_rating', 'price'];
+        numericFields.forEach(field => {
+            const value = reviewData[field as keyof ReviewData];
+            if (typeof value === 'string') {
+                reviewData[field as keyof ReviewData] = parseFloat(value);
+            }
         });
 
         try {

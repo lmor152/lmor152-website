@@ -41,8 +41,10 @@ const { label, panel } = Astro.props;
 
 <script>
     const tabList = document.querySelector('[role="tablist"]');
-    const tabs = tabList.querySelectorAll('[role="tab"]');
-    const panels = document.querySelectorAll('[role="tabpanel"]');
+    if (!tabList) throw new Error('No tablist found');
+
+    const tabs = tabList.querySelectorAll<HTMLButtonElement>('[role="tab"]');
+    const panels = document.querySelectorAll<HTMLElement>('[role="tabpanel"]');
 
     // Hide all panels except the first one
     panels.forEach((panel, index) => {
@@ -52,9 +54,12 @@ const { label, panel } = Astro.props;
     // Add click handlers to tabs
     tabs.forEach((tab) => {
         tab.addEventListener('click', (e) => {
-            const target = e.target;
+            const target = e.target as HTMLButtonElement;
             const panelId = target.getAttribute('aria-controls');
+            if (!panelId) return;
+            
             const panel = document.getElementById(panelId);
+            if (!panel) return;
 
             // Hide all panels
             panels.forEach(panel => panel.hidden = true);

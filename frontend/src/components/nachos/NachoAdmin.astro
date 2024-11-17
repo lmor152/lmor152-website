@@ -1,7 +1,19 @@
 ---
+interface PendingReview {
+    id: string;
+    restaurant_name: string;
+    reviewer_name: string;
+    overall_rating: number;
+    cheese_rating: number;
+    crispiness_rating: number;
+    topping_quality: number;
+    price: number;
+    review_text: string;
+}
+
 // Fetch pending reviews from the backend
 const response = await fetch('http://localhost:8000/api/nacho-reviews/pending');
-const pendingReviews = await response.json();
+const pendingReviews: PendingReview[] = await response.json();
 ---
 
 <div class="admin-panel">
@@ -59,9 +71,12 @@ const pendingReviews = await response.json();
 
 <script>
     function setupReviewActions() {
-        document.querySelectorAll('.approve-btn').forEach(button => {
+        document.querySelectorAll<HTMLButtonElement>('.approve-btn').forEach(button => {
             button.addEventListener('click', async (e) => {
-                const reviewId = e.currentTarget.dataset.reviewId;
+                const target = e.currentTarget as HTMLButtonElement;
+                const reviewId = target.dataset.reviewId;
+                if (!reviewId) return;
+
                 try {
                     const response = await fetch(`http://localhost:8000/api/nacho-reviews/${reviewId}/approve`, {
                         method: 'PUT',
@@ -72,14 +87,17 @@ const pendingReviews = await response.json();
 
                     if (!response.ok) throw new Error('Failed to approve review');
                     
-                    // Remove the review card from the UI
-                    const card = document.querySelector(`[data-review-id="${reviewId}"]`);
+                    const card = document.querySelector<HTMLElement>(`[data-review-id="${reviewId}"]`);
+                    if (!card) return;
                     card.remove();
                     
                     // Show empty state if no more reviews
-                    if (document.querySelectorAll('.review-card').length === 0) {
+                    const reviewCards = document.querySelectorAll('.review-card');
+                    if (reviewCards.length === 0) {
                         const adminPanel = document.querySelector('.admin-panel');
-                        adminPanel.innerHTML = '<h2>Pending Reviews</h2><p class="no-reviews">No pending reviews to approve</p>';
+                        if (adminPanel) {
+                            adminPanel.innerHTML = '<h2>Pending Reviews</h2><p class="no-reviews">No pending reviews to approve</p>';
+                        }
                     }
                 } catch (error) {
                     console.error('Error approving review:', error);
@@ -88,9 +106,12 @@ const pendingReviews = await response.json();
             });
         });
 
-        document.querySelectorAll('.reject-btn').forEach(button => {
+        document.querySelectorAll<HTMLButtonElement>('.reject-btn').forEach(button => {
             button.addEventListener('click', async (e) => {
-                const reviewId = e.currentTarget.dataset.reviewId;
+                const target = e.currentTarget as HTMLButtonElement;
+                const reviewId = target.dataset.reviewId;
+                if (!reviewId) return;
+
                 try {
                     const response = await fetch(`http://localhost:8000/api/nacho-reviews/${reviewId}`, {
                         method: 'DELETE'
@@ -98,14 +119,17 @@ const pendingReviews = await response.json();
 
                     if (!response.ok) throw new Error('Failed to reject review');
                     
-                    // Remove the review card from the UI
-                    const card = document.querySelector(`[data-review-id="${reviewId}"]`);
+                    const card = document.querySelector<HTMLElement>(`[data-review-id="${reviewId}"]`);
+                    if (!card) return;
                     card.remove();
                     
                     // Show empty state if no more reviews
-                    if (document.querySelectorAll('.review-card').length === 0) {
+                    const reviewCards = document.querySelectorAll('.review-card');
+                    if (reviewCards.length === 0) {
                         const adminPanel = document.querySelector('.admin-panel');
-                        adminPanel.innerHTML = '<h2>Pending Reviews</h2><p class="no-reviews">No pending reviews to approve</p>';
+                        if (adminPanel) {
+                            adminPanel.innerHTML = '<h2>Pending Reviews</h2><p class="no-reviews">No pending reviews to approve</p>';
+                        }
                     }
                 } catch (error) {
                     console.error('Error rejecting review:', error);
@@ -115,7 +139,6 @@ const pendingReviews = await response.json();
         });
     }
 
-    // Setup actions when the component loads
     setupReviewActions();
 </script>
 
