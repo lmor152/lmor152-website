@@ -1,0 +1,37 @@
+[
+	{
+		"dates": "April 2023 · Present",
+		"role": "Manager | Data Science & Analytics",
+		"company": "KPMG New Zealand",
+		"description": "Hollistic solution development and leading of technical projects",
+		"logo": "/assets/images/experiences/kpmg.png"
+	},
+	{
+		"dates": "April 2022 · April 2023",
+		"role": "Senior Data Scientist",
+		"company": "KPMG New Zealand",
+		"description": "Machine learning and data science projects.",
+		"logo": "/assets/images/experiences/kpmg.png"
+	},
+	{
+		"dates": "April 2020 · April 2022",
+		"role": "Junior Data Scientist",
+		"company": "KPMG New Zealand",
+		"description": "Dashboard development and data analysis.",
+		"logo": "/assets/images/experiences/kpmg.png"
+	},
+	{
+		"dates": "Nov 2019 · Feb 2021",
+		"role": "Research Assistant",
+		"company": "Department of Engineering Science, University of Auckland",
+		"description": "Summer research scholarship",
+		"logo": "/assets/images/experiences/auckland.webp"
+	},
+	{
+		"dates": "Nov 2017 · June 2018",
+		"role": "Process Engineering Intern",
+		"company": "Babbage Consultants",
+		"description": "",
+		"logo": "/assets/images/experiences/babbage.png"
+	}
+]

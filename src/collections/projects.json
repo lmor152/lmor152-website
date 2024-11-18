@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Honours Thesis: The Face is the Soul of the Body",
+		"description": "3D analysis of facial expressions",
+		"image": "/assets/images/projects/honours.png",
+		"url": "/post/honours"
+	},
+	{
+		"name": "Masters Thesis: Geocoding via LINZ Address Matching",
+		"description": "Free offline geocoding tool for NZ addresses",
+		"image": "/assets/images/projects/masters.png",
+		"url": "/post/masters"
+	},
+	{
+		"name": "Nacho Reviews",
+		"description": "Reviews of different nacho dishes",
+		"image": "/assets/images/projects/nachos.jpg",
+		"url": "https://nachos.lmor152.com"
+	},
+	{
+		"name": "Smart Home: Blind Automation",
+		"description": "Using Arduino and HomeLab",
+		"image": "/assets/images/projects/blinds.jpg",
+		"url": "/post/blinds"
+	},
+	{
+		"name": "Research Scholarship: Phonetic Modelling of Māori Loanwords",
+		"description": "An optimisation approach",
+		"image": "/assets/images/projects/research.png",
+		"url": "/post/research"
+	}
+]
