@@ -5,7 +5,7 @@ description: Converting my bus tag into a turtle
 dateFormatted: Aug 30th, 2023
 ---
 
-Recently, Auckland Transport key tag stopped working, and since they've stopped selling the key tags, the only alternative was to use the larger AT HOP card. 
+Recently, my Auckland Transport key tag stopped working, and since they've stopped selling the key tags, the only alternative was to use the larger AT HOP card. 
 
 I wanted something more compact and unique, so I decided to convert my bus card into a turtle keychain. Here’s how I did it:
 
@@ -20,7 +20,7 @@ I wanted something more compact and unique, so I decided to convert my bus card 
 
 
 3. **3D Printing the Turtle Casing**:
-   With the chip and coil ready, I used a scaled down version of the [turtle case](https://cults3d.com/en/3d-model/gadget/airtag-turtle-keychain) which is actually intended for airtags but worked perfectly for this!
+   With the chip and coil ready, I used a scaled down version of this [turtle case](https://cults3d.com/en/3d-model/gadget/airtag-turtle-keychain) which is actually intended for airtags but worked perfectly for this!
 
    ![case](/assets/images/projects/turtle/case.png)
 
