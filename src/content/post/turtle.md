@@ -16,7 +16,7 @@ I wanted something more compact and unique, so I decided to convert my bus card 
     ![acetone](/assets/images/projects/turtle/acetone.JPG)
    
 2. **Replacing the Coil**:
-   Once the chip was free, I cut the wires near the chip so that it could be attached to a new RFID coil. I ordered these Alibaba, and soldered the bus card's chip onto the new coils
+   Once the chip was free, I cut the wires near the chip so that it could be attached to a new RFID coil. I ordered these from Alibaba, and soldered the bus card's chip onto the new coils.
 
 
 3. **3D Printing the Turtle Casing**:
