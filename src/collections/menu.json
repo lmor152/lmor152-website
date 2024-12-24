@@ -10,9 +10,5 @@
 	{
 		"name": "Projects",
 		"url": "/projects"
-	},
-	{
-		"name": "Posts",
-		"url": "/posts"
 	}
 ]
