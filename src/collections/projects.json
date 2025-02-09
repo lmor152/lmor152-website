@@ -1,5 +1,12 @@
 [
 	{
+		"name": "GLAM Demo",
+		"description": "Demo site for the GLAM geocoding package",
+		"image": "/assets/images/projects/glam.svg",
+		"url": "https://glam-demo.lmor152.com",
+		"openInNewTab": true
+	},
+	{
 		"name": "Masters Thesis: Geocoding via LINZ Address Matching",
 		"description": "Free offline geocoding tool for NZ addresses",
 		"image": "/assets/images/projects/masters.png",
@@ -17,7 +24,7 @@
 		"name": "Nacho Reviews",
 		"description": "Reviews of different nacho dishes",
 		"image": "/assets/images/projects/nachos.jpg",
-		"url": "https://nacho-reviews-313743224598.us-central1.run.app/",
+		"url": "https://nacho-reviews.lmor152.com",
 		"openInNewTab": true
 	},
 	{
