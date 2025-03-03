@@ -5,7 +5,17 @@ description: 3D analysis of facial expressions
 dateFormatted: Nov 30th, 2020
 ---
 
-This post is about my Honours project. [View full thesis here](https://r2.lmor152.com/The%20Face%20is%20the%20Soul%20of%20the%20Body.pdf) or keep reading below for a summary.
+This post is about my Honours project, which was making and analysing point clouds from my face like the one below. 
+
+<div class="sketchfab-embed-wrapper" style="display: flex; justify-content: center; align-items: center; margin: 20px 0; width: 100%;"> 
+    <iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b4b064108ebf45bdb752c57fee155610/embed" width="800" height="600" style="width: 100%;">
+    </iframe> 
+</div>
+
+You can download my thesis [here](https://r2.lmor152.com/The%20Face%20is%20the%20Soul%20of%20the%20Body.pdf) or keep reading here for a summary.
+
+
+
 
 # Introduction
 The aim of this project was to use a stereoscope to capture images with high framerates and in HD. When used to film a face during various expressions, 3D point clouds can be created and deformations analysed to create efficient representations of faces.
