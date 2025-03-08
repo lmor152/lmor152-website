@@ -98,6 +98,6 @@ The final results from my thesis compared these methods to leading geocoding API
 | F     | Below 59%        |
 
 
-Next time you need to do some goecoding on NZ addresses, give GLAM a try! There is a user guide with the [repo](https://github.com/lmor152/glam). Let me know how you get on 😊
+Next time you need to do some goecoding on NZ addresses, give GLAM a try! There is a user guide with the [repo](https://github.com/lmor152/glam/). Let me know how you get on 😊
 
 
