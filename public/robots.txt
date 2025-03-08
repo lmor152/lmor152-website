@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+https://lmor152.com/sitemap-index.xml
